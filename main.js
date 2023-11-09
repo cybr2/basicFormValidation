@@ -11,7 +11,22 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
     
     validateForm();
-  });
+});
+
+const validateForm = () => {
+    if(!validateName() || !validatePhone() || !validateEmail() || !validateMessage()){
+       submitError.style.display = 'block';
+        submitError.innerHTML = 'Please fix error to submit';
+        setTimeout(() => {
+            submitError.style.display = 'none';
+        },3000)
+        return false
+    }
+
+    openPopUp();  
+}
+
+  
 
 const validateName = () => {
     const name = document.getElementById('contact-name').value;
@@ -95,19 +110,7 @@ const validateMessage = () => {
     return true; 
 }
 
-const validateForm = () => {
-    if(!validateName() || !validatePhone() || !validateEmail() || !validateMessage()){
-       submitError.style.display = 'block';
-        submitError.innerHTML = 'Please fix error to submit';
-        setTimeout(() => {
-            submitError.style.display = 'none';
-        },3000)
-        return false
-    }
 
-    openPopUp();
-    
-}
 const openPopUp = () => {
     popUpBox.classList.add('open-popUp');
   };
