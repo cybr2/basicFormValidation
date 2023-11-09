@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/3ff475d54b.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="container">
+            <form id="my-form">
+                <i class="fa-solid fa-paper-plane"></i>
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your name" id="contact-name" onkeyup="validateName()">
+                    <span id="name-error"></span>
+
+                </div>
+                <div class="input-group">
+                    <label>Phone No.</label>
+                    <input type="tel" placeholder="123 456 7890" id="contact-phone" onkeyup="validatePhone()">
+                    <span id="phone-error"></span>
+
+                </div>
+                <div class="input-group">
+                    <label>Email Id</label>
+                    <input type="email" placeholder="Enter Email" id="contact-email" onkeyup="validateEmail()">
+                    <span id="email-error"></span>
+
+                </div>
+                <div class="input-group">
+                    <label>Your Message</label>
+                    <textarea  rows="5" placeholder="Enter your message" id="contact-message" onkeyup="validateMessage()"></textarea>
+                    <span id="message-error"></span>
+                </div>
+                <button >Submit</button>
+                <span id="submit-error"></span>
+
+            </form>
+
+            <div class="popUp">
+                <i class="fa-solid fa-circle-check"></i>
+                <h2>Thank you !</h2>
+                <p>Your details has been successfully submitted. Thanks!</p>
+                <button type="button" onclick="closePopUp()">OK</button>
+            </div>
+        </div>
+        
+        <script src="main.js" async defer></script>
+    </body>
+</html>
